@@ -186,11 +186,15 @@ class _LayarKalkulatorState extends State<LayarKalkulator> {
 
     return Scaffold(
 
-      body: Padding(
+  body: SingleChildScrollView(
 
-        padding: const EdgeInsets.all(16),
+    physics: const BouncingScrollPhysics(),
 
-        child: Column(
+    child: Padding(
+
+      padding: const EdgeInsets.all(16),
+
+      child: Column(
 
           children: [
 
@@ -462,9 +466,12 @@ class _LayarKalkulatorState extends State<LayarKalkulator> {
             // HASIL
             //--------------------------------------------------
 
-            if (hasilData != null)
+          if (hasilData != null)
 
-              Expanded(
+Padding(
+  padding: const EdgeInsets.only(top: 16),
+  child: SizedBox(
+    width: double.infinity,
 
                 child: widget.isHalamanB
 
@@ -693,14 +700,12 @@ class _LayarKalkulatorState extends State<LayarKalkulator> {
 
                       ),
               ),       
-
-          ],
-
-        ),
-
+),
+           ],
       ),
-
-    );
+    ),
+  ),
+);
 
   }
 
@@ -785,7 +790,7 @@ class MenuDetailScreen extends StatelessWidget {
         children: [
 
           Align(
-            alignment: Alignment.centerLeft,
+            alignment: Alignment.topRight,
             child: TextButton.icon(
               onPressed: onB,
               icon: const Icon(Icons.arrow_back),
@@ -925,8 +930,8 @@ class BarisTabel extends StatelessWidget {
 
         children: [
 
-          Expanded(
-            child: Text(
+          Flexible(
+  child: Text(
               kiri,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
