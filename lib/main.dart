@@ -423,7 +423,7 @@ class _LayarKalkulatorState extends State<LayarKalkulator> {
                               default:
 
                                 hasilData =
-                                    simulasiRekap(
+                                    simulasiDayaKonsumsi(
                                         m,
                                         s,
                                         crrV,
